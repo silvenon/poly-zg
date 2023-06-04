@@ -5,14 +5,13 @@
   ],
   "include": [
     "e2e/**/*",
-    "support/**/*",
-    "../node_modules/cypress",
-    "../node_modules/@testing-library/cypress"
+    "../playwright.config.ts",
+    "../node_modules/@playwright/test"
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "noEmit": true,
-    "types": ["node", "cypress", "@testing-library/cypress"],
+    "types": ["node"],
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
