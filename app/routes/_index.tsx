@@ -1,3 +1,4 @@
+import IntroText from "~/text/Intro.mdx";
 import type { V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
@@ -10,10 +11,10 @@ export const meta: V2_MetaFunction = () => {
   ];
 };
 
-export default function Index() {
+export default function HomePage() {
   return (
-    <main className="grid min-h-screen place-content-center">
-      <h1>Poly Zagreb</h1>
+    <main>
+      <IntroText />
     </main>
   );
 }

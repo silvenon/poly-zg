@@ -10,6 +10,8 @@ import {
 } from "@remix-run/react";
 
 import stylesheet from "~/tailwind.css";
+import Header from "~/components/Header";
+import NavBar from "./components/NavBar";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -25,7 +27,9 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body className="h-full bg-white dark:bg-stone-900 dark:text-white">
+        <Header />
+        <NavBar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
