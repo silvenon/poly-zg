@@ -18,7 +18,7 @@ export default function LiteraturePage() {
             title="More Than Two"
             subtitle="A Practical Guide to Ethical Polyamory"
             author="Franklin Veaux and Eve Rickert"
-            href="https://a.co/d/ji34DGT"
+            href="https://www.morethantwo.com/"
             linkLabel="morethantwo.com"
             cover="/literature/more-than-two.jpg"
           />
