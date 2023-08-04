@@ -31,6 +31,7 @@ export default function Function({
         rel="noreferrer"
         className="aspect-h-[500] aspect-w-[332] relative block overflow-hidden rounded-xl ring ring-transparent transition hover:ring-red-500 hover:ring-offset-2 dark:ring-offset-stone-900 dark:hover:ring-red-400"
         aria-label={linkLabel}
+        title={`${title}: ${subtitle} by ${author}`}
       >
         <div>
           <img alt="" src={cover} className="absolute inset-0 object-cover" />
