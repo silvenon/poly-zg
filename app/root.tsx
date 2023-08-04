@@ -1,5 +1,6 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction } from "@remix-run/node";
+import { redirect } from "@remix-run/node";
+import type { LinksFunction, LoaderArgs } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,11 +8,31 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 
 import stylesheet from "~/tailwind.css";
+import CanonicalLink from "~/components/CanonicalLink";
 import Header from "~/components/Header";
 import NavBar from "./components/NavBar";
+
+import { AnalyticsProvider, AnalyticsScript } from "~/services/analytics";
+
+import { removeTrailingSlash, getDomainUrl } from "~/utils";
+
+export async function loader({ request }: LoaderArgs) {
+  const desiredUrl = removeTrailingSlash(request.url);
+
+  if (request.url !== desiredUrl) {
+    throw redirect(desiredUrl, { status: 301 });
+  }
+
+  return {
+    NODE_ENV: process.env.NODE_ENV,
+    FLY_APP_NAME: process.env.FLY_APP_NAME,
+    origin: getDomainUrl(request),
+  };
+}
 
 // https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
 const iconLinks = [
@@ -27,12 +48,28 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export default function App() {
+export default function AppWithProviders() {
+  return (
+    <AnalyticsProvider>
+      <App />
+    </AnalyticsProvider>
+  );
+}
+
+function App() {
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="hr" className="h-full">
       <head>
+        {data.FLY_APP_NAME === "poly-zg-staging" && (
+          <meta name="robots" content="noindex" />
+        )}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta property="og:site_name" content="Poly Zagreb" />
+        <meta property="og:locale" content="hr_HR" />
+        <meta name="twitter:card" content="summary" />
+        <CanonicalLink origin={data.origin} />
         <Meta />
         <Links />
       </head>
@@ -42,6 +79,7 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        {data.NODE_ENV === "production" && <AnalyticsScript />}
         <LiveReload />
       </body>
     </html>

@@ -1,18 +1,13 @@
 import PolyamoryText from "~/text/Polyamory.mdx";
+import { getMeta } from "~/utils";
 import type { V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "Poliamorija · Poly Zagreb" },
-    {
-      name: "description",
-      content: "Saznaj više o poliamoriji i poliamornim odnosima.",
-    },
-    {
-      name: "author",
-      content: "Matija Marohnić",
-    },
-  ];
+  return getMeta({
+    title: "Što je poliamorija? · Poly Zagreb",
+    description:
+      "Za razliku od monogamije, poliamorne veze mogu uključivati više ljubavnih veza istovremeno, poliamoriju zapravo možemo nazvati ljubavnom orijentacijom.",
+  });
 };
 
 export default function PolyamoryPage() {

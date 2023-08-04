@@ -1,14 +1,23 @@
 import IntroText from "~/text/Intro.mdx";
 import type { V2_MetaFunction } from "@remix-run/node";
+import { getMeta } from "~/utils";
+import type { loader as rootLoader } from "~/root";
 
-export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "Poly Zagreb" },
-    {
-      name: "description",
-      content: "Poliamorna zajednica u Zagrebu",
-    },
-  ];
+export const meta: V2_MetaFunction<unknown, { root: typeof rootLoader }> = ({
+  matches,
+}) => {
+  const origin = matches.find((match) => match.id === "root")?.data.origin;
+  return getMeta({
+    title: "Poly Zagreb",
+    description:
+      "Poliamorna zajednica u Zagrebu za nas koji se ne uklapamo u monogamiju, nalazimo se putem meetupova, i rado upoznajemo nove članove.",
+    image: origin
+      ? {
+          url: String(new URL("/seo.jpg", origin)),
+          alt: "logo",
+        }
+      : undefined,
+  });
 };
 
 export default function HomePage() {

@@ -1,4 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import { useAnalytics } from "~/services/analytics";
 import clsx from "clsx";
 
 interface Props {
@@ -6,6 +7,7 @@ interface Props {
 }
 
 export default function MeetupCard({ className }: Props) {
+  const analytics = useAnalytics();
   return (
     <div
       className={clsx(
@@ -19,6 +21,9 @@ export default function MeetupCard({ className }: Props) {
         rel="noreferrer"
         className="block w-64 max-w-full flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 transition hover:text-red-700 hover:shadow-red-700/20 hover:ring-red-900/20 dark:bg-stone-800 dark:shadow-none dark:ring-white/20 dark:hover:text-white dark:hover:ring-white/40"
         aria-label="Poly Zagreb Meetup"
+        onClick={() => {
+          analytics.trackGoal("OI9FBT6X", 0);
+        }}
       >
         <div className="relative">
           <img alt="" src="/meetup-cover.jpg" />

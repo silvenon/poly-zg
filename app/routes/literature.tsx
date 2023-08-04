@@ -1,5 +1,15 @@
 import LiteratureText from "~/text/Literature.mdx";
 import Book from "~/components/Book";
+import { getMeta } from "~/utils";
+import type { V2_MetaFunction } from "@remix-run/node";
+
+export const meta: V2_MetaFunction = () => {
+  return getMeta({
+    title: "Preporučena literatura · Poly Zagreb",
+    description:
+      "Literatura koja se preporučuje onima koji žele saznati više o poliamoriji, od evolucionarne psihologije pa sve do prakse.",
+  });
+};
 
 export default function LiteraturePage() {
   return (
