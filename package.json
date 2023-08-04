@@ -22,9 +22,11 @@
     "pre-push": "npm run validate"
   },
   "nano-staged": {
-    "*": "prettier --write",
     "*.{js,ts,tsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{mdx,css,json,yml,yaml,webmanifest}": [
       "prettier --write"
     ]
   },
