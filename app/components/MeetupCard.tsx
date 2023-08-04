@@ -46,7 +46,8 @@ export default function MeetupCard({ className }: Props) {
       <p>
         Meetupove organiziramo putem platforme Meeetup.com, pa ako nam želiš
         doći trebat će ti (besplatan) account. Alternativno možeš doći kao
-        nečiji <span className="font-black text-red-600">+1</span>.
+        nečiji{" "}
+        <span className="font-black text-red-600 dark:text-red-400">+1</span>.
       </p>
     </div>
   );
