@@ -5,7 +5,7 @@ export default function MeetupCard() {
     <a
       href="https://www.meetup.com/poly-zagreb/"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noreferrer"
       className="block w-64 max-w-full overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 transition hover:text-red-700 hover:shadow-red-700/20 hover:ring-red-900/20 dark:bg-stone-800 dark:shadow-none dark:ring-white/20 dark:hover:text-white dark:hover:ring-white/40"
       aria-label="Poly Zagreb Meetup"
     >
