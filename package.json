@@ -10,7 +10,8 @@
     "prelint": "eslint-config-prettier app/root.tsx",
     "setup": "playwright install --with-deps",
     "start": "remix-serve build",
-    "test": "vitest run",
+    "test": "run-p test:*",
+    "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "typecheck": "tsc && tsc --project playwright",
     "validate": "run-p test test:e2e lint typecheck"
