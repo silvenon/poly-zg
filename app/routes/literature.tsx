@@ -5,7 +5,7 @@ export default function LiteraturePage() {
   return (
     <main>
       <LiteratureText>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="flex flex-wrap gap-3">
           <Book
             title="Sex at Dawn"
             subtitle="How We Mate, Why We Stray, and What It Means for Modern Relationships"

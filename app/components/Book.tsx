@@ -19,7 +19,7 @@ export default function Function({
   children,
 }: Props) {
   return (
-    <article>
+    <article className="min-w-[166px] max-w-full">
       <div className="sr-only">
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
