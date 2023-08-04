@@ -6,6 +6,7 @@ interface Props extends PropsWithChildren<{}> {
   subtitle: string;
   author: string;
   href: string;
+  linkLabel: string;
   cover: string;
 }
 
@@ -14,6 +15,7 @@ export default function Function({
   subtitle,
   author,
   href,
+  linkLabel,
   cover,
   children,
 }: Props) {
@@ -29,7 +31,7 @@ export default function Function({
         target="_blank"
         rel="noreferrer"
         className="group aspect-h-[500] aspect-w-[332] relative block overflow-hidden rounded-xl ring ring-transparent transition hover:ring-red-500 hover:ring-offset-2 dark:ring-offset-stone-900 dark:hover:ring-red-400"
-        aria-label="Pogledaj na Amazonu"
+        aria-label={linkLabel}
       >
         <div>
           <img alt="" src={cover} className="absolute inset-0 object-cover" />

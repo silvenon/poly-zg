@@ -11,6 +11,7 @@ export default function LiteraturePage() {
             subtitle="How We Mate, Why We Stray, and What It Means for Modern Relationships"
             author="Christopher Ryan and Cacilda Jethá"
             href="https://a.co/d/2AmzaDQ"
+            linkLabel="Amazon"
             cover="/literature/sex-at-dawn.jpg"
           />
           <Book
@@ -18,6 +19,7 @@ export default function LiteraturePage() {
             subtitle="A Practical Guide to Ethical Polyamory"
             author="Franklin Veaux and Eve Rickert"
             href="https://a.co/d/ji34DGT"
+            linkLabel="morethantwo.com"
             cover="/literature/more-than-two.jpg"
           />
         </div>
