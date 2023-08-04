@@ -22,6 +22,14 @@ export default function LiteraturePage() {
             linkLabel="morethantwo.com"
             cover="/literature/more-than-two.jpg"
           />
+          <Book
+            title="The Ethical Slut"
+            subtitle="A Practical Guide to Polyamory, Open Relationships & Other Adventures"
+            author="Janet W. Hardy"
+            href="https://a.co/d/5Yzxz4s"
+            linkLabel="Amazon"
+            cover="/literature/the-ethical-slut.jpg"
+          />
         </div>
       </LiteratureText>
     </main>
