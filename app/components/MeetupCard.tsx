@@ -1,4 +1,4 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
+import { ExternalLinkIcon } from "~/icons";
 import { useAnalytics } from "~/services/analytics";
 import clsx from "clsx";
 
@@ -32,7 +32,7 @@ export default function MeetupCard({ className }: Props) {
             src="/meetup.svg"
             className="absolute bottom-2 right-4 w-20"
           />
-          <ArrowTopRightOnSquareIcon
+          <ExternalLinkIcon
             aria-hidden="true"
             className="absolute right-2 top-2 h-6 w-6 text-white"
           />
