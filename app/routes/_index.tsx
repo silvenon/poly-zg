@@ -10,7 +10,7 @@ export const meta: V2_MetaFunction<unknown, { root: typeof rootLoader }> = ({
   return getMeta({
     title: "Poly Zagreb",
     description:
-      "Poliamorna zajednica u Zagrebu za nas koji se ne uklapamo u monogamiju, nalazimo se putem meetupova, i rado upoznajemo nove članove.",
+      "Poliamorna zajednica u Zagrebu za nas koji se nismo pronašli u monogamiji. Nalazimo se putem meetupova, i rado upoznajemo nove članove.",
     image: origin
       ? {
           url: String(new URL("/seo.jpg", origin)),
