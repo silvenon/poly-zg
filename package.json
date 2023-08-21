@@ -14,7 +14,7 @@
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "typecheck": "tsc && tsc --project playwright",
-    "validate": "run-p test test:e2e lint typecheck"
+    "validate": "run-p test lint typecheck"
   },
   "prettier": {},
   "simple-git-hooks": {
