@@ -33,6 +33,14 @@ export function getDomainUrl(request: Request) {
   return `${protocol}://${host}`;
 }
 
+export function removeWww(href: string): string {
+  const url = new URL(href);
+  if (url.hostname.startsWith("www.")) {
+    url.hostname = url.hostname.replace(/^www\./, "");
+  }
+  return url.href;
+}
+
 export function removeTrailingSlash(href: string): string {
   const url = new URL(href);
   if (url.pathname.endsWith("/") && url.pathname !== "/") {
