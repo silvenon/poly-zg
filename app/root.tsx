@@ -18,10 +18,10 @@ import NavBar from "./components/NavBar";
 
 import { AnalyticsProvider, AnalyticsScript } from "~/services/analytics";
 
-import { removeWww, removeTrailingSlash, getDomainUrl } from "~/utils";
+import { removeTrailingSlash, getDomainUrl } from "~/utils";
 
 export async function loader({ request }: LoaderArgs) {
-  let desiredUrl = removeTrailingSlash(removeWww(request.url));
+  const desiredUrl = removeTrailingSlash(request.url);
 
   if (request.url !== desiredUrl) {
     throw redirect(desiredUrl, { status: 301 });
