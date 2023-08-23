@@ -1,6 +1,6 @@
 import { useLocation } from "@remix-run/react";
 import { useEffect } from "react";
-import { removeTrailingSlash } from "~/utils";
+import { removeWww, removeTrailingSlash } from "~/utils";
 import { useAnalytics } from "~/services/analytics";
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
 
 export default function CanonicalLink({ origin }: Props) {
   const { pathname } = useLocation();
-  const canonicalUrl = removeTrailingSlash(new URL(pathname, origin).href);
+  const canonicalUrl = removeTrailingSlash(
+    removeWww(new URL(pathname, origin).href)
+  );
   const analytics = useAnalytics();
 
   useEffect(() => {
