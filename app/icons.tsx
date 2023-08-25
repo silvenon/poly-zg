@@ -6,12 +6,12 @@ interface IconProps extends SVGProps {
 
 function Icon({ symbolId, ...svgProps }: IconProps) {
   return (
-    <svg fill={svgProps.fill ?? "currentColor"} {...svgProps}>
+    <svg {...svgProps}>
       <use href={`/sprite.svg#${symbolId}`} />
     </svg>
   );
 }
 
 export function ExternalLinkIcon(props: SVGProps) {
-  return <Icon symbolId="external-link" {...props} />;
+  return <Icon symbolId="external-link" fill="currentColor" {...props} />;
 }
