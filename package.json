@@ -63,7 +63,6 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-cypress": "^2.13.2",
     "happy-dom": "^9.8.0",
     "msw": "^1.2.1",
     "nano-staged": "^0.8.0",
