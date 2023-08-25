@@ -58,7 +58,7 @@ export default function NavBar() {
           </label>
           <select
             id="navigation"
-            className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-red-800 py-1 pl-3 pr-9 text-red-800 ring-2 ring-white"
+            className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 rounded-md border-0 py-1.5 pl-3 pr-9 font-medium text-red-800  shadow ring-1 ring-black/20 focus-visible:outline-2 focus-visible:outline-orange-300 focus-visible:ring-black/20"
             value={navigationItems.find((tab) => tab.href === pathname)?.href}
             onChange={(event) => navigate(event.target.value)}
           >
