@@ -1,6 +1,13 @@
-import { NavLink } from "@remix-run/react";
+import { NavLink, useLocation, useNavigate } from "@remix-run/react";
 import type { ComponentPropsWithoutRef } from "react";
 import clsx from "clsx";
+
+const navigationItems = [
+  { name: "Početna", href: "/" },
+  { name: "Poliamorija", href: "/polyamory" },
+  { name: "Meetupovi", href: "/meetups" },
+  { name: "Literatura", href: "/literature" },
+];
 
 function NavigationLink({
   children,
@@ -31,11 +38,38 @@ function NavigationLink({
 }
 
 export default function NavBar() {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   return (
-    <nav className="flex items-center justify-center space-x-2 border-b bg-stone-50 dark:border-b-stone-700 dark:bg-stone-800 dark:text-stone-300">
-      <NavigationLink to="/polyamory">Poliamorija</NavigationLink>
-      <NavigationLink to="/meetups">Meetupovi</NavigationLink>
-      <NavigationLink to="/literature">Literatura</NavigationLink>
-    </nav>
+    <>
+      <nav className="relative mb-2 sm:mb-0 sm:border-b sm:border-stone-200 sm:bg-stone-50 sm:dark:border-stone-700 sm:dark:bg-stone-800 sm:dark:text-stone-300">
+        <div className="hidden sm:block">
+          <div className="relative flex items-center justify-center space-x-2">
+            {navigationItems.map((item) => (
+              <NavigationLink key={item.name} to={item.href}>
+                {item.name}
+              </NavigationLink>
+            ))}
+          </div>
+        </div>
+        <div className="sm:hidden">
+          <label htmlFor="navigation" className="sr-only">
+            Odaberi stranicu
+          </label>
+          <select
+            id="navigation"
+            className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-red-800 py-1 pl-3 pr-9 ring-2 ring-white/50"
+            value={navigationItems.find((tab) => tab.href === pathname)?.href}
+            onChange={(event) => navigate(event.target.value)}
+          >
+            {navigationItems.map((item) => (
+              <option key={item.name} value={item.href}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </nav>
+    </>
   );
 }
