@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 export default function Header() {
   return (
-    <header className="bg-fancy-gradient relative px-4 pb-6 pt-[clamp(theme(spacing.20),15vw,theme(spacing.28))] text-center text-white lg:pb-8">
+    <header className="bg-fancy-gradient relative px-4 pb-8 pt-[clamp(theme(spacing.20),15vw,theme(spacing.28))] text-center text-white sm:pb-6 lg:pb-8">
       <div className="absolute inset-x-0 top-4 flex justify-center">
         <div className="w-[clamp(100px,20vw,180px)]">
           <div className="aspect-h-[299] aspect-w-[270]">
