@@ -1,6 +1,6 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
 import { redirect } from "@remix-run/node";
-import type { LinksFunction, LoaderArgs } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -20,8 +20,8 @@ import { AnalyticsProvider, AnalyticsScript } from "~/services/analytics";
 
 import { removeWww, removeTrailingSlash, getDomainUrl } from "~/utils";
 
-export async function loader({ request }: LoaderArgs) {
-  let desiredUrl = removeTrailingSlash(removeWww(request.url));
+export async function loader({ request }: LoaderFunctionArgs) {
+  const desiredUrl = removeTrailingSlash(removeWww(request.url));
 
   if (request.url !== desiredUrl) {
     throw redirect(desiredUrl, { status: 301 });

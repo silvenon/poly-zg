@@ -1,8 +1,8 @@
 import MeetupsText from "~/text/Meetups.mdx";
 import { getMeta } from "~/utils";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return getMeta({
     title: "Naši meetupovi · Poly Zagreb",
     description:

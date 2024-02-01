@@ -1,9 +1,9 @@
 import IntroText from "~/text/Intro.mdx";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import { getMeta } from "~/utils";
 import type { loader as rootLoader } from "~/root";
 
-export const meta: V2_MetaFunction<unknown, { root: typeof rootLoader }> = ({
+export const meta: MetaFunction<unknown, { root: typeof rootLoader }> = ({
   matches,
 }) => {
   const origin = matches.find((match) => match.id === "root")?.data.origin;

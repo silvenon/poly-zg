@@ -14,6 +14,7 @@ test.each(Object.entries(icons))(
     render(<Icon role="img" />);
     const iconHref = screen
       .getByRole("img")
+      // eslint-disable-next-line testing-library/no-node-access
       .querySelector("use")
       ?.getAttribute("href");
     const [, symbolId] = iconHref?.split("#") ?? [];

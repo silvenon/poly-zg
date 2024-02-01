@@ -1,9 +1,9 @@
 import LiteratureText from "~/text/Literature.mdx";
 import Book from "~/components/Book";
 import { getMeta } from "~/utils";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return getMeta({
     title: "Preporučena literatura · Poly Zagreb",
     description:

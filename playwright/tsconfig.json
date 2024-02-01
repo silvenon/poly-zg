@@ -1,13 +1,5 @@
 {
-  "exclude": [
-    "../node_modules/@types/jest",
-    "../node_modules/@testing-library/jest-dom"
-  ],
-  "include": [
-    "e2e/**/*",
-    "../playwright.config.ts",
-    "../node_modules/@playwright/test"
-  ],
+  "include": ["e2e/**/*", "../playwright.config.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "noEmit": true,
@@ -15,14 +7,14 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "target": "es2019",
+    "target": "es2020",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "typeRoots": ["../types", "../node_modules/@types"],
 
     "paths": {
-      "~/*": ["../app/*"]
-    }
-  }
+      "~/*": ["../app/*"],
+    },
+  },
 }

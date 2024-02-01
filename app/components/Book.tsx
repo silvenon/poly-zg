@@ -1,6 +1,4 @@
-import type { PropsWithChildren } from "react";
-
-interface Props extends PropsWithChildren<{}> {
+interface Props {
   title: string;
   subtitle: string;
   author: string;
@@ -16,7 +14,6 @@ export default function Function({
   href,
   linkLabel,
   cover,
-  children,
 }: Props) {
   return (
     <article className="min-w-[166px] max-w-full">
