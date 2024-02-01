@@ -1,0 +1,26 @@
+pre-commit:
+  commands:
+    eslint:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: npx eslint --fix {staged_files}
+    prettier:
+      glob: "*.{js,ts,jsx,tsx,mdx,css,json,yml,yaml,webmanifest}"
+      run: npx prettier --write {staged_files}
+
+pre-push:
+  parallel: true
+  commands:
+    eslint-check-config:
+      run: npx eslint-config-prettier app/root.tsx
+    eslint:
+      run: npx eslint --report-unused-disable-directives .
+    prettier:
+      run: npx prettier --check .
+    vitest:
+      run: npx vitest run
+    playwright:
+      run: npx playwright test
+    typescript-root:
+      run: npx tsc
+    typescript-playwright:
+      run: npx tsc --project ./playwright

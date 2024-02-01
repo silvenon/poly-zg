@@ -9,31 +9,17 @@
     "format": "prettier --write .",
     "lint": "eslint --report-unused-disable-directives --cache --cache-location ./node_modules/.cache/eslint .",
     "prelint": "eslint-config-prettier app/root.tsx",
-    "setup": "npm install && simple-git-hooks && playwright install --with-deps",
+    "setup": "npm install && lefthook install && playwright install --with-deps",
     "start": "remix-serve ./build/index.js",
-    "test": "run-p test:*",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "typecheck": "tsc && tsc --project playwright",
-    "validate": "run-p test lint typecheck"
+    "typecheck": "tsc && tsc --project ./playwright",
+    "validate": "lefthook run pre-push"
   },
   "prettier": {
     "trailingComma": "es5",
     "plugins": [
       "prettier-plugin-tailwindcss"
-    ]
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx nano-staged",
-    "pre-push": "npm run validate"
-  },
-  "nano-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{mdx,css,json,yml,yaml,webmanifest}": [
-      "prettier --write"
     ]
   },
   "dependencies": {
@@ -78,13 +64,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^6.2.0",
     "happy-dom": "^13.3.8",
+    "lefthook": "^1.6.1",
     "msw": "^2.1.5",
-    "nano-staged": "^0.8.0",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "simple-git-hooks": "^2.9.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
     "vite-tsconfig-paths": "^4.3.1",
