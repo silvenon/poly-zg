@@ -11,7 +11,7 @@ pre-push:
   parallel: true
   commands:
     eslint-check-config:
-      run: npx eslint-config-prettier app/root.tsx
+      run: npm run lint:check
     eslint:
       run: npx eslint --report-unused-disable-directives .
     prettier:
