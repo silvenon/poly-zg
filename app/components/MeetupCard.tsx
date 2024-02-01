@@ -19,7 +19,7 @@ export default function MeetupCard({ className }: Props) {
         href="https://www.meetup.com/poly-zagreb/"
         target="_blank"
         rel="noreferrer"
-        className="block w-64 max-w-full flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 transition hover:text-red-700 hover:shadow-red-700/20 hover:ring-red-900/20 dark:bg-stone-800 dark:shadow-none dark:ring-white/20 dark:hover:text-white dark:hover:ring-white/40"
+        className="group block w-64 max-w-full flex-shrink-0 overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 transition hover:text-red-700 hover:shadow-red-700/20 hover:ring-red-900/20 dark:bg-stone-800 dark:shadow-none dark:ring-white/20 dark:hover:text-white dark:hover:ring-white/40"
         aria-label="Poly Zagreb Meetup"
         onClick={() => {
           analytics.trackGoal("OI9FBT6X", 0);
@@ -27,6 +27,7 @@ export default function MeetupCard({ className }: Props) {
       >
         <div className="relative">
           <img alt="" src="/meetup-cover.jpg" />
+          <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-200 group-hover:opacity-25 group-hover:dark:opacity-0" />
           <img
             alt="meetup"
             src="/meetup.svg"
