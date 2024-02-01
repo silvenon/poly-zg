@@ -16,12 +16,6 @@
     "typecheck": "tsc && tsc --project ./playwright",
     "validate": "lefthook run pre-push"
   },
-  "prettier": {
-    "trailingComma": "es5",
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
-  },
   "dependencies": {
     "@remix-run/css-bundle": "^2.5.1",
     "@remix-run/node": "^2.5.1",
