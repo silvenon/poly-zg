@@ -64,7 +64,7 @@ module.exports = {
       },
     },
     {
-      files: ["**/.eslintrc.*"],
+      files: ["**/.eslintrc.cjs"],
       env: {
         node: true,
       },
