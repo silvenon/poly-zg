@@ -20,7 +20,5 @@ pre-push:
       run: npx vitest run
     playwright:
       run: npx playwright test
-    typescript-root:
-      run: npx tsc
-    typescript-playwright:
-      run: npx tsc --project ./playwright
+    typescript:
+      run: npx tsc --build

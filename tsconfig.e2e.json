@@ -1,8 +1,10 @@
 {
-  "include": ["e2e/**/*", "../playwright.config.ts"],
+  "include": ["./playwright/e2e/**/*", "./playwright.config.ts"],
   "compilerOptions": {
+    "composite": true,
     "baseUrl": ".",
     "noEmit": true,
+    "lib": ["es2020"],
     "types": ["node"],
     "esModuleInterop": true,
     "jsx": "react-jsx",
@@ -10,11 +12,6 @@
     "target": "es2020",
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "typeRoots": ["../types", "../node_modules/@types"],
-
-    "paths": {
-      "~/*": ["../app/*"],
-    },
-  },
+    "resolveJsonModule": true
+  }
 }
