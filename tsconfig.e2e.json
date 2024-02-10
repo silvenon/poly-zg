@@ -2,12 +2,10 @@
   "include": ["./playwright/e2e/**/*", "./playwright.config.ts"],
   "compilerOptions": {
     "composite": true,
-    "baseUrl": ".",
     "noEmit": true,
     "lib": ["es2020"],
     "types": ["node"],
     "esModuleInterop": true,
-    "jsx": "react-jsx",
     "moduleResolution": "node",
     "target": "es2020",
     "strict": true,
