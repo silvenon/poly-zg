@@ -22,7 +22,7 @@ export default function LiteraturePage() {
             author="Christopher Ryan and Cacilda Jethá"
             href="https://a.co/d/2AmzaDQ"
             linkLabel="Amazon"
-            cover="/literature/sex-at-dawn.jpg"
+            cover="/books/sex-at-dawn.jpg"
           />
           <Book
             title="More Than Two"
@@ -30,7 +30,7 @@ export default function LiteraturePage() {
             author="Franklin Veaux and Eve Rickert"
             href="https://www.morethantwo.com/"
             linkLabel="morethantwo.com"
-            cover="/literature/more-than-two.jpg"
+            cover="/books/more-than-two.jpg"
           />
           <Book
             title="The Ethical Slut"
@@ -38,7 +38,7 @@ export default function LiteraturePage() {
             author="Janet W. Hardy"
             href="https://a.co/d/5Yzxz4s"
             linkLabel="Amazon"
-            cover="/literature/the-ethical-slut.jpg"
+            cover="/books/the-ethical-slut.jpg"
           />
         </div>
       </LiteratureText>
