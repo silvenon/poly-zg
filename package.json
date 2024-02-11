@@ -13,7 +13,7 @@
     "start": "remix-serve ./build/index.js",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "typecheck": "tsc --build",
+    "typecheck": "tsc --noEmit",
     "validate": "lefthook run pre-push"
   },
   "dependencies": {

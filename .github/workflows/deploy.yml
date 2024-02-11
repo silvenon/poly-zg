@@ -57,7 +57,7 @@ jobs:
         run: npm install
 
       - name: Type check
-        run: npx tsc --build
+        run: npx tsc --noEmit
 
   vitest:
     name: Vitest

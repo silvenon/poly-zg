@@ -21,4 +21,4 @@ pre-push:
     playwright:
       run: npx playwright test
     typescript:
-      run: npx tsc --build
+      run: npx tsc --noEmit
