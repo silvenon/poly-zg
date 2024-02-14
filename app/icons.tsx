@@ -1,3 +1,5 @@
+import spriteUrl from "./sprite.svg";
+
 type SVGProps = React.SVGAttributes<SVGSVGElement>;
 
 interface IconProps extends SVGProps {
@@ -7,7 +9,7 @@ interface IconProps extends SVGProps {
 function Icon({ symbolId, ...svgProps }: IconProps) {
   return (
     <svg {...svgProps}>
-      <use href={`/sprite.svg#${symbolId}`} />
+      <use href={`${spriteUrl}#${symbolId}`} />
     </svg>
   );
 }

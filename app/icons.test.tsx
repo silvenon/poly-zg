@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 let sprite: string;
 
 beforeAll(async () => {
-  sprite = await fs.readFile(`${__dirname}/../public/sprite.svg`, "utf-8");
+  sprite = await fs.readFile(`${__dirname}/sprite.svg`, "utf-8");
 });
 
 test.each(Object.entries(icons))(
