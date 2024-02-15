@@ -14,7 +14,7 @@ module.exports = {
   extends: ["eslint:recommended"],
   overrides: [
     {
-      files: ["**/*.{jsx,tsx}"],
+      files: ["*.{jsx,tsx}"],
       extends: [
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
@@ -37,7 +37,7 @@ module.exports = {
       },
     },
     {
-      files: ["**/*.{ts,tsx}"],
+      files: ["*.{ts,tsx}"],
       extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
@@ -56,7 +56,7 @@ module.exports = {
       },
     },
     {
-      files: ["**/*.{test,spec}.{js,jsx,ts,tsx}"],
+      files: ["*.{test,spec}.{js,jsx,ts,tsx}"],
       excludedFiles: ["playwright/**"],
       extends: ["plugin:testing-library/react", "plugin:jest-dom/recommended"],
       env: {
@@ -64,7 +64,7 @@ module.exports = {
       },
     },
     {
-      files: ["**/.eslintrc.cjs"],
+      files: [".eslintrc.cjs"],
       env: {
         node: true,
       },
