@@ -1,9 +1,7 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import { redirect } from "@remix-run/node";
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -11,7 +9,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
-import stylesheet from "~/tailwind.css";
+import stylesheet from "~/tailwind.css?url";
 import CanonicalLink from "~/components/CanonicalLink";
 import Header from "~/components/Header";
 import NavBar from "./components/NavBar";
@@ -45,7 +43,6 @@ const iconLinks = [
 export const links: LinksFunction = () => [
   ...iconLinks,
   { rel: "stylesheet", href: stylesheet },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
 export default function AppWithProviders() {
@@ -80,7 +77,6 @@ function App() {
         <ScrollRestoration />
         <Scripts />
         {data.NODE_ENV === "production" && <AnalyticsScript />}
-        <LiveReload />
       </body>
     </html>
   );
