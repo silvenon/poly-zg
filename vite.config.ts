@@ -22,6 +22,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
   },
+  build: {
+    // inlining SVG sprite breaks the sprite
+    assetsInlineLimit: 0,
+  },
   test: {
     globals: true,
     environment: "happy-dom",
