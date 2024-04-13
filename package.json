@@ -8,7 +8,7 @@
     "dev": "remix vite:dev",
     "format": "prettier --write .",
     "lint:check": "eslint-config-prettier app/root.tsx",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "lint": "eslint --report-unused-disable-directives --cache --cache-location ./node_modules/.cache/eslint .",
     "setup": "npm install && lefthook run setup",
     "start": "remix-serve ./build/server/index.js",
     "test:unit": "vitest run",
