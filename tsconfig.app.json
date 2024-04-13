@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["vite/client", "vitest/globals", "@remix-run/node"],
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "jsx": "react-jsx",
+    "module": "Preserve",
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "skipLibCheck": true,
+
+    // Vite takes care of building everything, not tsc.
+    "noEmit": true
+  },
+  "exclude": ["./node_modules", "./e2e"]
+}

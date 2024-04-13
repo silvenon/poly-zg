@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "Preserve",
+    "target": "ES2022",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "skipLibCheck": true
+  },
+  "include": ["./e2e"]
+}

@@ -2,7 +2,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
 import mdx from "@mdx-js/rollup";
 import { defineConfig } from "vite";
-import { configDefaults as testConfigDefaults } from "vitest/config";
 import { unstable_vitePlugin as remix } from "@remix-run/dev";
 import { installGlobals } from "@remix-run/node";
 
@@ -24,7 +23,8 @@ export default defineConfig(({ mode }) => ({
   test: {
     globals: true,
     environment: "happy-dom",
-    setupFiles: ["./test/setup-test-env.ts"],
-    exclude: [...testConfigDefaults.exclude, "./playwright"],
+    setupFiles: ["./setup-test-env.ts"],
+    include: ["**/*.test.{ts,tsx}"],
+    exclude: ["./node_modules", "./e2e"],
   },
 }));

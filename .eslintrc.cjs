@@ -6,11 +6,6 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-  },
   extends: ["eslint:recommended"],
   overrides: [
     {
@@ -30,33 +25,15 @@ module.exports = {
           { name: "Link", linkAttribute: "to" },
           { name: "NavLink", linkAttribute: "to" },
         ],
-        "import/resolver": {
-          typescript: {},
-        },
       },
     },
     {
       files: ["*.{ts,tsx}"],
-      extends: [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript",
-      ],
-      settings: {
-        "import/internal-regex": "^~/",
-        "import/resolver": {
-          node: {
-            extensions: [".ts", ".tsx"],
-          },
-          typescript: {
-            alwaysTryTypes: true,
-          },
-        },
-      },
+      extends: ["plugin:@typescript-eslint/recommended"],
     },
     {
       files: ["*.{test,spec}.{js,jsx,ts,tsx}"],
-      excludedFiles: ["playwright/**"],
+      excludedFiles: ["e2e/**"],
       extends: ["plugin:testing-library/react", "plugin:jest-dom/recommended"],
       env: {
         node: true,

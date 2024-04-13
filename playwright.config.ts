@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
-  testDir: "./playwright",
+  testDir: "./e2e",
+  testMatch: "**/*.test.ts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

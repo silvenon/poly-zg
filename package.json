@@ -14,7 +14,7 @@
     "start": "remix-serve ./build/server/index.js",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --build",
     "validate": "lefthook run pre-push"
   },
   "dependencies": {
@@ -49,8 +49,6 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
