@@ -1,5 +1,5 @@
-import { ExternalLinkIcon } from "~/icons";
 import { useAnalytics } from "~/services/analytics";
+import spriteUrl from "~/sprite.svg?url";
 import clsx from "clsx";
 
 interface Props {
@@ -33,10 +33,12 @@ export default function MeetupCard({ className }: Props) {
             src="/meetup.svg"
             className="absolute bottom-2 right-4 w-20"
           />
-          <ExternalLinkIcon
+          <svg
             aria-hidden="true"
             className="absolute right-2 top-2 h-6 w-6 text-white"
-          />
+          >
+            <use href={`${spriteUrl}#external-link`} />
+          </svg>
         </div>
         <div className="py-3 text-center">
           <h2 className="text-center font-medium uppercase tracking-wider md:text-lg">
