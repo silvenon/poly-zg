@@ -1,3 +1,5 @@
+# git hooks
+
 pre-commit:
   commands:
     eslint:
@@ -22,3 +24,11 @@ pre-push:
       run: npx playwright test
     typescript:
       run: npx tsc --noEmit
+
+# custom tasks
+
+setup:
+  parallel: true
+  commands:
+    playwright:
+      run: npx playwright install --with-deps

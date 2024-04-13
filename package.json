@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "lint:check": "eslint-config-prettier app/root.tsx",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-    "setup": "npm install && lefthook install && playwright install --with-deps",
+    "setup": "npm install && lefthook run setup",
     "start": "remix-serve ./build/server/index.js",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
