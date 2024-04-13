@@ -17,7 +17,7 @@ pre-push:
     eslint:
       run: npx eslint --report-unused-disable-directives .
     prettier:
-      run: npx prettier --check .
+      run: npm run format:check
     vitest:
       run: npx vitest run
     playwright:
