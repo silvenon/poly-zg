@@ -21,7 +21,7 @@ pre-push:
     vitest:
       run: npm run test:unit
     playwright:
-      run: npm run test:e2e
+      run: npm run test:e2e -- --reporter=list
     typescript:
       run: npm run typecheck
 
