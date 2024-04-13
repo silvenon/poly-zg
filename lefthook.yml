@@ -6,7 +6,7 @@ pre-commit:
     eslint:
       priority: 1
       glob: "*.{js,ts,jsx,tsx}"
-      run: npx eslint --fix {staged_files}
+      run: npx eslint --no-ignore --fix {staged_files}
       stage_fixed: true
     prettier:
       priority: 2
