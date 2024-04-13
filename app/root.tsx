@@ -26,7 +26,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
   }
 
   return {
-    NODE_ENV: process.env.NODE_ENV,
     FLY_APP_NAME: process.env.FLY_APP_NAME,
     origin: getDomainUrl(request),
   };
@@ -76,7 +75,7 @@ function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        {data.NODE_ENV === "production" && <AnalyticsScript />}
+        {import.meta.env.PROD && <AnalyticsScript />}
       </body>
     </html>
   );

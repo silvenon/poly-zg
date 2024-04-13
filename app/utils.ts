@@ -44,7 +44,7 @@ export function getMeta({
   description,
   image,
 }: PageMeta): MetaDescriptor[] {
-  if (description && process.env.NODE_ENV === "development") {
+  if (description && import.meta.env.DEV) {
     if (description.length < 110) {
       throw new Error(
         `Page description should be at least 110 characters long, currently it's ${description.length}.\n\n"${description}"`
