@@ -34,5 +34,5 @@ pre-push:
 setup:
   parallel: true
   commands:
-    playwright:
+    playwright-install:
       run: npx playwright install --with-deps
