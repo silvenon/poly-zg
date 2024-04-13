@@ -19,7 +19,7 @@ function NavigationLink({
         {...props}
         className={({ isActive }) =>
           clsx(
-            "peer block px-2 py-3 text-sm font-medium sm:px-3 sm:py-4 sm:text-base md:text-lg lg:py-4",
+            "peer block px-3 py-3 text-sm font-medium sm:px-4 sm:py-4 sm:text-base md:text-lg lg:py-4",
             props.className,
             isActive
               ? "text-red-600 dark:text-white"
@@ -44,7 +44,7 @@ export default function NavBar() {
     <>
       <nav className="relative mb-2 sm:mb-0 sm:border-b sm:border-stone-200 sm:bg-stone-50 sm:dark:border-stone-700 sm:dark:bg-stone-800 sm:dark:text-stone-300">
         <div className="hidden sm:block">
-          <div className="relative flex items-center justify-center space-x-2">
+          <div className="relative flex items-center justify-center">
             {navigationItems.map((item) => (
               <NavigationLink key={item.name} to={item.href}>
                 {item.name}
@@ -58,7 +58,7 @@ export default function NavBar() {
           </label>
           <select
             id="navigation"
-            className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 rounded-md border-0 py-1.5 pl-3 pr-9 font-medium text-red-800  shadow ring-1 ring-black/20 focus-visible:outline-2 focus-visible:outline-orange-300 focus-visible:ring-black/20"
+            className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 rounded-md border-0 py-1.5 pl-3 pr-9 font-medium text-red-800 shadow ring-1 ring-black/20 focus-visible:outline-2 focus-visible:outline-orange-300 focus-visible:ring-black/20"
             value={navigationItems.find((tab) => tab.href === pathname)?.href}
             onChange={(event) => navigate(event.target.value)}
           >
