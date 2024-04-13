@@ -77,7 +77,7 @@ jobs:
         run: npm install
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
   vitest:
     name: Vitest
@@ -97,7 +97,7 @@ jobs:
         run: npm install
 
       - name: Run vitest
-        run: npx vitest run
+        run: npm run test:unit
 
   playwright:
     name: Playwright
@@ -123,7 +123,7 @@ jobs:
         run: npm run build
 
       - name: Run Playwright
-        run: npx playwright test
+        run: npm run test:e2e
 
       - uses: actions/upload-artifact@v4
         if: always()
