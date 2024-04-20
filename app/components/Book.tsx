@@ -7,7 +7,7 @@ interface Props {
   cover: string;
 }
 
-export default function Function({
+export default function Book({
   title,
   subtitle,
   author,
