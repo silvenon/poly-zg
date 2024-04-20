@@ -24,7 +24,11 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // inlining SVG sprite breaks the sprite
-    assetsInlineLimit: 0,
+    assetsInlineLimit: (filePath) => {
+      if (filePath.endsWith("sprite.svg")) {
+        return false;
+      }
+    },
   },
   test: {
     globals: true,
