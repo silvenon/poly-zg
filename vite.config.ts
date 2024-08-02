@@ -4,7 +4,6 @@ import mdx from "@mdx-js/rollup";
 import { defineConfig } from "vite";
 import { vitePlugin as remix } from "@remix-run/dev";
 import { installGlobals } from "@remix-run/node";
-import { metronome } from "metronome-sh/vite";
 
 installGlobals();
 
@@ -17,7 +16,6 @@ export default defineConfig(({ mode }) => ({
       remix({
         ignoredRouteFiles: ["**/.*", "**/*.test.{js,jsx,ts,tsx}"],
       }),
-    metronome(),
   ],
   server: {
     port: 3000,
